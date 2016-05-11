@@ -5,9 +5,15 @@ Chef LWRP for creating and deleting Windows Services
 ## Supported Platforms
 
 <table>
-<tr>Windows 2008R2</tr>
-<tr>Windows 2012</tr>
-<tr>Windows 2012R2</tr>
+  <tr>
+    <th>Windows 2008R2</th>
+  </tr>
+  <tr>
+    <th>Windows 2012</th>
+  </tr>
+  <tr>
+    <th>Windows 2012R2</th>
+  </tr>
 </table>
 ## Attributes
 
