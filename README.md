@@ -4,26 +4,58 @@ Chef LWRP for creating and deleting Windows Services
 
 ## Supported Platforms
 
-Windows 2008R2
-Windows 2012
-Windows 2012R2
-
+<table>
+<tr>Windows 2008R2</tr>
+<tr>Windows 2012</tr>
+<tr>Windows 2012R2</tr>
+</table>
 ## Attributes
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>String</th>
-    <th>Name of the Service</th>
-    <th>nil</th>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['winservice']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>name</tt></td>
+    <td>String</td>
+    <td>Name of the service</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>bin_path</tt></td>
+    <td>String</td>
+    <td>Full path to the executable</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>start_type</tt></td>
+    <td>String</td>
+    <td>Start type of the service</td>
+    <td><tt>disabled</tt></td>
+  </tr>
+  <tr>
+    <td><tt>display_name</tt></td>
+    <td>String</td>
+    <td>Display name of the windows service</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>run_as_user</tt></td>
+    <td>String</td>
+    <td>User to run the service</td>
+    <td><tt>LocalSystem</tt></td>
+  </tr>
+  <tr>
+    <td><tt>run_as_password</tt></td>
+    <td>String</td>
+    <td>Password for user, if other than LocalSystem</td>
+    <td><tt>nil</tt></td>
   </tr>
 </table>
+
 
 ## Usage
 
@@ -36,7 +68,7 @@ win_service "Create Window Service" do
   action :create
 end
 
-win_service "Delete Window Service" do
+win_service "Create Window Service" do
   name MyService
   action :delete
 end
