@@ -59,6 +59,16 @@ Chef LWRP for creating and deleting Windows Services
 
 ## Usage
 
+Place a dependency on the winservice cookbook in your cookbook's `metadata.rb`
+
+
+```ruby
+depends 'winservice'
+```
+
+Then, in a recipe:
+
+```ruby
 win_service "Create Window Service" do
   name MyService
   bin_path C:\\My\\Awesome\\Path
@@ -67,16 +77,14 @@ win_service "Create Window Service" do
   run_as_password MySuperSecretPassword
   action :create
 end
+```
 
+```ruby
 win_service "Create Window Service" do
   name MyService
   action :delete
 end
-
-### winservice::default
-
-Include `winservice` in your node's `metadata.rb`:
-
+```
 
 ## License and Authors
 
